@@ -1,5 +1,6 @@
 package com.team.dashuaibackend.service;
 
+import com.team.dashuaibackend.model.domain.Niao;
 import com.team.dashuaibackend.model.domain.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,11 @@
 package com.team.dashuaibackend.controller;
 
+import com.team.dashuaibackend.model.domain.Niao;
 import com.team.dashuaibackend.model.domain.User;
+import com.team.dashuaibackend.model.domain.request.AddNiaoRequest;
 import com.team.dashuaibackend.model.domain.request.UserLoginRequest;
 import com.team.dashuaibackend.model.domain.request.UserRegisterRequest;
+import com.team.dashuaibackend.service.NiaoService;
 import com.team.dashuaibackend.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,5 +60,6 @@ public class UserController {
         User user = userService.userLogin(userAccount, userPassword,request);
         return userService.getSafetyUser(user);
     }
+
 
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.dashuaibackend.mapper.NiaoMapper">
+
+    <resultMap id="BaseResultMap" type="com.team.dashuaibackend.model.domain.Niao">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="user_id" column="user_id" jdbcType="BIGINT"/>
+            <result property="niao_amount" column="niao_amount" jdbcType="FLOAT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="yali" column="yali" jdbcType="FLOAT"/>
+            <result property="hurt" column="hurt" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,niao_amount,
+        create_time,yali,hurt
+    </sql>
+</mapper>

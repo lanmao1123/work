@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.dashuaibackend.mapper.YaoMapper">
+
+    <resultMap id="BaseResultMap" type="com.team.dashuaibackend.model.domain.Yao">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="yao_id" column="yao_id" jdbcType="BIGINT"/>
+            <result property="yao_name" column="yao_name" jdbcType="VARCHAR"/>
+            <result property="yao_startdate" column="yao_startdate" jdbcType="TIMESTAMP"/>
+            <result property="yao_enddate" column="yao_enddate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,yao_id,yao_name,
+        yao_startdate,yao_enddate
+    </sql>
+</mapper>
