@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/niao")
@@ -16,17 +17,18 @@ public class NiaoController {
     @Resource
     private NiaoService niaoService;
     @PostMapping("/addNiao")
-    public Niao addNiao(@RequestBody AddNiaoRequest request)
+    public Niao addNiao(@RequestBody AddNiaoRequest addNiaoRequest, HttpServletRequest request)
     {
         if(request==null)
         {
             return null;
         }
-        double niao_amount = request.getNiao_amount();
-        double yali=request.getYali();
-        int hurt=request.getHurt();
+        double niao_amount = addNiaoRequest.getNiao_amount();
+        double yali=addNiaoRequest.getYali();
+        int hurt=addNiaoRequest.getHurt();
+
         //少一步判断
-        Niao niao= niaoService.addNiao(niao_amount, yali, hurt);
+        Niao niao= niaoService.addNiao(niao_amount, yali, hurt,request);
         return niao;
     }
 }
